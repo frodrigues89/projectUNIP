@@ -23,7 +23,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
     // Autentica o usuário
     if (LoginController.authenticate(loginData)) {
       // Login bem-sucedido, navegar para a próxima tela (Solicitacao)
-      navigation.navigate('Solicitacao',  { username: username });
+      navigation.navigate('Solicitacao',  { username });
     } else {
       // Login falhou
       Alert.alert('Login falhou', 'Por favor, verifique seu nome de usuário e senha.');

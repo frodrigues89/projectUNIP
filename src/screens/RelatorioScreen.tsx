@@ -2,12 +2,18 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import RelatorioController from '../controllers/RelatorioController'; // Importa o controlador
 import RelatorioStyles from '../styles/RelatorioStyles'; // Importa os estilos
+import { useRoute } from '@react-navigation/native';
 
 const RelatorioScreen: React.FC = () => {
   // Suponha que você tenha os dados do relatório disponíveis aqui
+
+  const route = useRoute();
+
   const dadosRelatorio = {
-    item: 'Papel',
-    quantidade: 100,
+    
+    item: route.params.requestData.itemSelecionado,
+    quantidade: route.params.requestData.quantidade,
+    centroCusto: route.params.requestData.centroCusto
     // Outros dados do relatório...
   };
 
@@ -20,7 +26,9 @@ const RelatorioScreen: React.FC = () => {
       <Text style={RelatorioStyles.titulo}>Relatório de Solicitação</Text>
       <Text>Item: {dadosRelatorio.item}</Text>
       <Text>Quantidade Solicitada: {dadosRelatorio.quantidade}</Text>
-      {/* Espaços vazios para mostrar dados adicionais */}
+      <Text>Centro de Custo: {dadosRelatorio.centroCusto}</Text>
+
+
       <Text style={RelatorioStyles.espacoVazio}>Lorem ipsum dolor sit amet...</Text>
       <Text style={RelatorioStyles.espacoVazio}>Lorem ipsum dolor sit amet...</Text>
     </View>

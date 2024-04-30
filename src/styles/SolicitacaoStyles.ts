@@ -23,6 +23,36 @@ export default StyleSheet.create({
         padding: 10,
         borderWidth: 1,
         borderColor: '#ccc',
-        borderRadius: 5,
+        borderRadius: 5,        
       },
+      txtInput:{
+        width: '15%',
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5, 
+        textAlign: 'center',
+        fontWeight: 'bold',
+      },
+      viewQtd:{
+        width: '100%',
+        flexDirection: 'row' ,
+        alignItems: 'center',
+        marginBottom: 10,      
+      },
+      qtdBtnTxt:{
+        paddingVertical: 10,
+        marginHorizontal: 5,
+        borderRadius: 5,
+        textAlign: 'center',
+        borderColor: '#ccc',
+      },
+      qtdBtn:{
+        width: '20%',
+        borderRadius: 5,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        textAlign: 'center',
+        marginHorizontal: 2
+      }
 });
