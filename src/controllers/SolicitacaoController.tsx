@@ -1,24 +1,8 @@
-import { useNavigation } from '@react-navigation/native';
+import ApiService from '../utils/ApiService';
 
-interface NavigationParams {
-  username: string;
-}
-
-interface Navigation {
-  navigate: (screen: string, params?: NavigationParams) => void;
-}
-
-let navigation: Navigation | null = null;
-
-const SolicitacaoController = {
-  enviarSolicitacao: (data: any) => {
-    navigation = useNavigation(); // Inicializa a navegação
-    if (navigation) {
-      // Redireciona o usuário para a tela de relatório
-      navigation.navigate('RelatorioScreen');
-    } else {
-      console.error('A navegação não foi inicializada.');
-    }
+const SolicitacaoController = { 
+  enviarSolicitacao: (data: any, navigation : any) => {
+    ApiService.handleEnviarSolicitacao(data, "put", navigation)    
   },
 };
 

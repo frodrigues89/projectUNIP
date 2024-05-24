@@ -7,13 +7,16 @@ import { useRoute } from '@react-navigation/native';
 const RelatorioScreen: React.FC = () => {
   // Suponha que você tenha os dados do relatório disponíveis aqui
 
+  //link da API:
+  // https://5selrql8e0.execute-api.sa-east-1.amazonaws.com/teste
+
   const route = useRoute();
 
   const dadosRelatorio = {
     
-    item: route.params.requestData.itemSelecionado,
-    quantidade: route.params.requestData.quantidade,
-    centroCusto: route.params.requestData.centroCusto
+    item: route.params.data.itemSelecionado,
+    quantidade: route.params.data.quantidade,
+    centroCusto: route.params.data.centroCusto
     // Outros dados do relatório...
   };
 

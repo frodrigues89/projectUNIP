@@ -18,12 +18,13 @@ const AppNavigator: React.FC = () => {
             name="Solicitacao"
             component={SolicitacaoScreen}
             options={{ title: 'Solicitação' }}
-            initialParams={{ username: '' }} 
+            initialParams={{ username: String }} 
         />
         <Stack.Screen
             name="Relatorio"
             component={RelatorioScreen}
             options={{ title: 'Relatório' }}
+            initialParams={{requestData : Object}}
         />
       </Stack.Navigator>
     </NavigationContainer>

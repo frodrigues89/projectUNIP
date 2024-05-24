@@ -18,10 +18,11 @@ const SolicitacaoScreen: React.FC<SolicitacaoProps> = ( ) => {
 
   const navigation = useNavigation();
 
-  const handleSubmit = () => {
-    if (!(itemSelecionado === '') && !(centroCusto === '') ){
+  const handleSubmit =  () => {
+    if (!(itemSelecionado === '') && !(centroCusto === '') ){      
       const requestData = { itemSelecionado, quantidade, centroCusto };
-      navigation.navigate('Relatorio', { requestData });
+      SolicitacaoController.enviarSolicitacao(requestData, navigation);
+      
     }else{
       Alert.alert("ATENÇÃO! Você deve selecionar um item e um centro de custo para prosseguir.")
     }
